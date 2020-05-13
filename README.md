@@ -15,4 +15,4 @@ Posteriormente, inicie el Cliente con el comando:
 npm i
 npm start
 ```
-Puede probar el proyecto a través de este enlace https://ironserotonin.herokuapp.com/
+Puede probar el proyecto a través de este enlace https://serotour.herokuapp.com/
