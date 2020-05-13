@@ -1,0 +1,93 @@
+* {
+	box-sizing: border-box;
+	font-family: "Oxanium";
+  }
+	.login-box{
+		width: 100%;
+		height: 100vh;
+	}
+
+  .login {
+	width: 100%;
+	height: 100%;
+	background: url(https://image.freepik.com/foto-gratis/mapa-pasaporte-billetes-auriculares-camara-dslr-superficie-madera_23-2147837121.jpg);
+	background-size: contain;
+	margin: 0 auto;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
+.form {
+	max-width: 50%;
+	max-height: 90%;
+	margin: auto;
+	padding: 20px 20px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
+  
+img{
+	width: 100px;
+}
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+	.form {
+	  -webkit-backdrop-filter: blur(3px);
+	  backdrop-filter: blur(2px);
+	  background-color: rgba(255, 255, 255, 0.9);  
+	}
+	.warning {
+	  display: none;
+	}
+  }
+
+
+  .login .form h2 {
+	color: rgb(0, 0, 0);
+	text-align: center;
+	font-weight: normal;
+	font-size: 25px;
+  }
+
+  .login .form h5 {
+	color: rgb(255, 0, 0);
+	font-size: 15px;
+	margin-top: 10px;
+  }
+
+  .login .form p {
+	font-size: .9rem;
+	margin-top: 10px;
+  }
+  
+  .login .form input {
+	width: 100%;
+	height: 40px;
+	margin-top: 20px;
+	background: rgba(255,255,255,.7);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 0 15px;
+	color: rgb(0, 0, 0);
+	border-radius: 2px;
+	font-size: 14px;
+  }
+  .login .form input:focus {
+	border: 1px solid rgba(255,255,255,.8);
+	outline: none;
+  }
+  ::-webkit-input-placeholder {
+	  color: rgb(0, 0, 0);
+  }
+  .login .form input[type=submit] {
+	background: rgb(0, 236, 253);
+	color: rgb(0, 0, 0);
+	font-size: 15px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-weight: bold;
+  }

@@ -1,0 +1,50 @@
+.profile{
+    width: 100%;
+    // height: 70vh;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items:center ;
+    margin-top: 10px;
+    text-align: center;
+
+    img{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+        object-fit: cover;
+    }
+    p{
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+    }
+
+    .border{
+        border-top: 1px solid rgba(112, 111, 111, 0.3);
+        border-bottom: 1px solid rgba(112, 111, 111, 0.3);
+        box-shadow: 0 5px 10px 0 rgb(112, 111, 111);
+        padding: 10px 30px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .configuration{
+        width: 100%;
+        border-top: 1px solid rgba(112, 111, 111, 0.3);
+        border-bottom: 1px solid rgba(112, 111, 111, 0.3);
+        box-shadow: 0 5px 10px 0 rgb(112, 111, 111);
+        padding: 10px 30px;
+        margin-bottom: 10px;
+        text-align: start;
+
+        .checkbox{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h5{
+            font-size: 1.2rem;
+            color: red;
+        }
+    }
+}
