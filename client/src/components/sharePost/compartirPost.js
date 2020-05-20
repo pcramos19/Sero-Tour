@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import PropTypes from 'prop-types'; 
-import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } from 'react-share';  
+import { FacebookShareButton } from 'react-share';  
 import ShareIcon from '@material-ui/icons/Share';
 
 class compartirPost extends Component { 

@@ -9,11 +9,11 @@ class EditProfile extends Component {
         super(props);
         this.filesServices = new FilesServices()
         this.state = { 
-            img: "",
-            name: '',
-            username:"",
-            email: '',
-            description:""
+            img: `${this.props.userInSession.img}`,
+            name: `${this.props.userInSession.name}`,
+            username:`${this.props.userInSession.username}`,
+            email: `${this.props.userInSession.email}`,
+            description:`${this.props.userInSession.description}`
         };
       }
 
@@ -71,13 +71,13 @@ class EditProfile extends Component {
                 <PhotoCameraIcon/>
                 <input type="file" placeholder={this.props.userInSession.img} id="name" name="img" onChange={e => this.handleFileUpload(e)}/>
                 <label>Nombre:</label>  
-                <input type="text" placeholder={this.props.userInSession.name} id="name" name="name" onChange={e => this.handleChange(e)} required/>
+                <input type="text" placeholder={this.props.userInSession.name} id="name" name="name" onChange={e => this.handleChange(e)} />
                 <label>Usuario:</label>  
-                <input type="text" placeholder={this.props.userInSession.username} id="name" name="username" onChange={e => this.handleChange(e)} required/>
+                <input type="text" placeholder={this.props.userInSession.username} id="name" name="username" onChange={e => this.handleChange(e)} />
                 <label>Email:</label>  
-                <input type="email" placeholder={this.props.userInSession.email} id="name" name="email" onChange={e => this.handleChange(e)} required/>
+                <input type="email" placeholder={this.props.userInSession.email} id="name" name="email" onChange={e => this.handleChange(e)} />
                 <label>Descripción:</label>  
-                <textarea type="email" placeholder={this.props.userInSession.description} id="name" name="description" onChange={e => this.handleChange(e)} required/>
+                <textarea type="email" placeholder={this.props.userInSession.description} id="name" name="description" onChange={e => this.handleChange(e)} />
                 
                 <input type="submit" value="Guardar cambios"/> 
             </form>

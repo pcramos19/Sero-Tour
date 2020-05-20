@@ -125,6 +125,7 @@ class App extends Component {
         <div className="main-wrapper">
           <Switch>
             <Route exact path="/login"><Redirect to="/home" /></Route>
+            <Route exact path="/signup"><Redirect to="/home" /></Route>
             <Route exact path="/home" render={() => { return (
               <div className="home-container">
                 <Search searchBar = {(value) => this.searchBar(value)}></Search>

@@ -25,10 +25,12 @@ const login = (req, user) => {
 // SIGNUP
 router.post('/signup', (req, res, next) => {
 
-  const {username, password} = req.body;
+  const {username, password, name, email} = req.body;
 
   console.log('username', username)
   console.log('password', password)
+  console.log('name', name)
+  console.log('email', email)
 
   // Check for non empty user or password
   if (!username || !password){
@@ -45,7 +47,9 @@ router.post('/signup', (req, res, next) => {
 
     return new User({
       username,
-      password: hashPass
+      password: hashPass,
+      name,
+      email
     }).save();
   })
   .then( savedUser => login(req, savedUser)) // Login the user using passport
