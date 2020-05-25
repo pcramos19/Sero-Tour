@@ -52,18 +52,28 @@ class Navbar extends Component {
 										</Link>
 									</Dropdown.Item>
 								</Dropdown.Menu>
-							</Dropdown>
+						</Dropdown>
         </nav>
       );
     } else {
       return (
-        <div>
-          <nav className="nav-style">
-            <img src="../../../logo.jpg" alt="Serotonin"/>
-            {/* <Link to="/signup">Signup</Link>
-            <Link to="/login">Login</Link> */}
-          </nav>
-        </div>
+         <nav className="nav-style">
+          <div className="log-name">
+            <Link to="/home">
+              <img src="../../../logo_trans.png" alt="Sero Tour"/>
+            </Link>
+          </div>
+          <Dropdown>
+								<Dropdown.Toggle variant="none">
+									<img src="../../../silueta-hombre.png" alt="Iniciar sesión" />
+								</Dropdown.Toggle>
+								<Dropdown.Menu>
+									<Dropdown.Item href="#/action-1">
+                    <Link className="pedro" to="/login">Iniciar sesión</Link>
+                  </Dropdown.Item>
+								</Dropdown.Menu>
+						</Dropdown>
+        </nav>
       );
     }
   }

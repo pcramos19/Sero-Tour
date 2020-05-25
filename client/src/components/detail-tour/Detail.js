@@ -64,7 +64,7 @@ class Detail extends Component {
     if(this.state.tour){
       const { title, img, _id , languages, duration , description, comments} = this.state.tour
       return (
-        <div className="detail">
+      <div className="detail">
         <div className="detail-description">
           <h1>{title}</h1>
           <img src={img} alt={title} />
@@ -93,7 +93,7 @@ class Detail extends Component {
           </div>
           <p><strong>Descripción</strong></p>
           <p>{description}</p>
-     </div>
+        </div>
           <div className="comments">
 
             <p><strong onClick={() => this.switchMenu()}>{this.state.open ? "Ocultar Comentarios" : "Mostrar Comentarios"}</strong></p>

@@ -120,30 +120,29 @@ class App extends Component {
     if (this.state.loggedInUser) {
       return (
         <div className="App">
-          {/* <Redirect to="/home" /> */}
           <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
-        <div className="main-wrapper">
-          <Switch>
-            <Route exact path="/login"><Redirect to="/home" /></Route>
-            <Route exact path="/signup"><Redirect to="/home" /></Route>
-            <Route exact path="/home" render={() => { return (
-              <div className="home-container">
-                <Search searchBar = {(value) => this.searchBar(value)}></Search>
-                <div className="main-container">
-                  <Home userInSession={this.state.loggedInUser} tours = {this.state.tours}/>
-                </div>
-              </div>);}}/>
-            <Route exact path="/mapa" render={props => { return <Mapa tourId={props.match.params.id}></Mapa>; }}/> 
-            <Route exact path="/tour/:id" render={props => { return <Detail tourId={props.match.params.id}></Detail>; }}/>
-            <Route exact path="/start-tour/:id" render={props => { return <Start tourId={props.match.params.id}></Start>; }}/>
-            <Route exact path="/route/detail" render={props => { return <Stage tourId={props.match.params.id} {...props}></Stage>; }}/>
-            <Route exact path="/fav" render={() => { return <Fav userInSession={this.state.loggedInUser}></Fav>; }}/>
-            <Route exact path="/tour-created" render={() => { return <TourCreated userInSession={this.state.loggedInUser} update={this.update}></TourCreated>; }}/>
-            <Route exact path="/edit-tour/:id" render={props => { return <EditTour tourId={props.match.params.id} update={this.update} {...props}></EditTour>; }}/>
-            <Route exact path="/new-tour" render={props => { return <NewTour userInSession={this.state.loggedInUser} update={this.update} {...props}></NewTour>; }}/>
-            <Route exact path="/profile" render={() => { return <Profile userInSession={this.state.loggedInUser} logout={this.logout}></Profile>; }}/>
-            <Route exact path="/edit-profile" render={props => { return <EditProfile userInSession={this.state.loggedInUser} updateUser={this.updateAllUser} {...props}></EditProfile>; }}/>
-          </Switch>
+          <div className="main-wrapper">
+            <Switch>
+              <Route exact path="/login"><Redirect to="/home" /></Route>
+              <Route exact path="/signup"><Redirect to="/home" /></Route>
+              <Route exact path="/home" render={() => { return (
+                <div className="home-container">
+                  <Search searchBar = {(value) => this.searchBar(value)}></Search>
+                  <div className="main-container">
+                    <Home userInSession={this.state.loggedInUser} tours = {this.state.tours}/>
+                  </div>
+                </div>);}}/>
+              <Route exact path="/mapa" render={props => { return <Mapa tourId={props.match.params.id}></Mapa>; }}/> 
+              <Route exact path="/tour/:id" render={props => { return <Detail tourId={props.match.params.id}></Detail>; }}/>
+              <Route exact path="/start-tour/:id" render={props => { return <Start tourId={props.match.params.id}></Start>; }}/>
+              <Route exact path="/route/detail" render={props => { return <Stage tourId={props.match.params.id} {...props}></Stage>; }}/>
+              <Route exact path="/fav" render={() => { return <Fav userInSession={this.state.loggedInUser}></Fav>; }}/>
+              <Route exact path="/tour-created" render={() => { return <TourCreated userInSession={this.state.loggedInUser} update={this.update}></TourCreated>; }}/>
+              <Route exact path="/edit-tour/:id" render={props => { return <EditTour tourId={props.match.params.id} update={this.update} {...props}></EditTour>; }}/>
+              <Route exact path="/new-tour" render={props => { return <NewTour userInSession={this.state.loggedInUser} update={this.update} {...props}></NewTour>; }}/>
+              <Route exact path="/profile" render={() => { return <Profile userInSession={this.state.loggedInUser} logout={this.logout}></Profile>; }}/>
+              <Route exact path="/edit-profile" render={props => { return <EditProfile userInSession={this.state.loggedInUser} updateUser={this.updateAllUser} {...props}></EditProfile>; }}/>
+            </Switch>
           </div>
           <Footer></Footer>
         </div>
@@ -151,11 +150,32 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <Redirect to="/login" />
-          <Switch>
-            <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
-            <Route exact path="/login" render={() => <Login getUser={this.getUser} />} />
-          </Switch>
+          <Redirect to="/home" />
+          <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+          <div className="main-wrapper">
+            <Switch>
+              <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
+              <Route exact path="/login" render={() => <Login getUser={this.getUser} />} />
+              <Route exact path="/home" render={() => { return (
+                <div className="home-container">
+                  <Search searchBar = {(value) => this.searchBar(value)}></Search>
+                  <div className="main-container">
+                    <Home userInSession={this.state.loggedInUser} tours = {this.state.tours}/>
+                  </div>
+                </div>);}}/>
+              <Route exact path="/mapa" render={props => { return <Mapa tourId={props.match.params.id}></Mapa>; }}/> 
+              <Route exact path="/tour/:id" render={props => { return <Detail tourId={props.match.params.id}></Detail>; }}/>
+              <Route exact path="/start-tour/:id"><Redirect to="/login" /></Route>
+              <Route exact path="/route/detail"><Redirect to="/login" /></Route>
+              <Route exact path="/fav"><Redirect to="/login" /></Route>
+              <Route exact path="/tour-created"><Redirect to="/login" /></Route>
+              <Route exact path="/edit-tour/:id"><Redirect to="/login" /></Route>
+              <Route exact path="/new-tour"><Redirect to="/login" /></Route>
+              <Route exact path="/profile"><Redirect to="/login" /></Route>
+              <Route exact path="/edit-profile"><Redirect to="/login" /></Route>
+            </Switch>
+          </div>
+
         </div>
       );
     }

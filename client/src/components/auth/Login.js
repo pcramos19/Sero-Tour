@@ -48,7 +48,9 @@ class Login extends Component {
     <div className="login-box">
       <div className="login">
         <div className="form">
-          <img src="../../../logo_trans.png" alt=""/>
+          <Link to="/home">
+              <img src="../../../logo_trans.png" alt="Sero Tour"/>
+          </Link>
           <form onSubmit={this.handleFormSubmit}>
             <input type="text" name="username" placeholder="Usuario" value={this.state.username} onChange={e => this.handleChange(e)} required/>
             <input type="password" name="password" placeholder="Contraseña" value={this.state.password} onChange={e => this.handleChange(e)} required/>
